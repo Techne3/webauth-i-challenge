@@ -10,7 +10,7 @@ module.exports=(req,res,next) => {
       .then(user => {
         // check that the password is valid
         if (user && bcrypt.compareSync(password, user.password )) {
-          res.status(200).json({ message: `Welcome ${user.username}!` });
+        //   res.status(200).json({ message: `Welcome ${user.username}!` });
           next(); // this is different from the login file
         } else {
           res.status(401).json({ message: 'You shall not pass!' });
